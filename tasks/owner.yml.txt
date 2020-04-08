@@ -1,0 +1,6 @@
+- name: Set the owner of root directory
+   win_owner:
+        path: C:\Inetpub\wwwroot\
+        user: Dryice\iis_admin
+        recurse: yes
+
