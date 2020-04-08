@@ -1,0 +1,11 @@
+---
+ad_firstname: iis-admin
+ad_surname: iis-admin
+passwd_user: Test@12345
+user_required: present
+domain_admin_password: "@#Password24#@" 
+domain_server_fqdn: windows.Dryice.com
+group_to_add: Administrators
+ad_username: iis-admin
+domain_admin_name: Dryice\windowsadmin
+domain_user_name: Dryice\iis-admin

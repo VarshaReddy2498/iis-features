@@ -1,0 +1,23 @@
+---
+ - name: create user
+   win_domain_user:
+     name: '{{ ad_username }}'
+     firstname: '{{ ad_firstname }}'
+     surname: '{{ ad_surname }}'
+     password: '{{ passwd_user }}'
+     state: '{{ user_required }}'
+     domain_username: '{{ domain_admin_name }}'
+     domain_password: '{{ domain_admin_password }}'
+     domain_server: '{{ domain_server_fqdn }}'
+ - name : allow remote access to iis-admin
+   win_group_membership:
+     name: '{{ group_to_add }}'
+     members:
+       - '{{ domain_user_name }}'
+     state: present
+ - name: Set the owner of root directory
+   win_owner:
+        path: C:\Inetpub\wwwroot\
+        user: Dryice\iis_admin
+        recurse: yes
+
